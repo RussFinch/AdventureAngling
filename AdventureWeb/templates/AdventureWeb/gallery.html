@@ -1,0 +1,21 @@
+{% extends "AdventureWeb/index.html" %}
+{% load staticfiles %}
+{% block content %}
+    <h2>Gallery</h2>
+    <br>
+    <div>
+        {% for gallery in object_list %}
+            <div class="galleryImage">
+                <h5 id="galleryTitle">{{ gallery.title }}</h5>
+                <br>
+                <div>
+                    <img id="galleryImage" src="media/{{ gallery.image }}" class="img-fluid" alt="Gallery Image"/>
+                </div>
+                <br>
+                <div>
+                    <p id="galleryDesc">{{ gallery.description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

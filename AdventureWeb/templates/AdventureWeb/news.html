@@ -1,0 +1,16 @@
+{% extends "AdventureWeb/index.html" %}
+{% load staticfiles %}
+{% block content %}
+    <h2>News</h2>
+    <br>
+    <div>
+        {% for post in object_list %}
+            <h5>{{ post.date|date:"d-m-Y" }}</h5>
+            <p id="newsTitle">{{ post.title }}</p>
+            <div class="newsContent">
+                {{ post.body|safe|linebreaks }}
+            </div>
+        {% endfor %}
+    </div>
+    <br>
+{% endblock %}
